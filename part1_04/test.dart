@@ -1,8 +1,13 @@
-// for in 문 예시
+// while 문 예시
 void main() {
-  List<int> indexs = [0, 1, 2, 3, 4, 5];
+  bool isRunning = true;
+  int count = 0;
 
-  for (final index in indexs) {
-    print('Running For Index $index');
+  while (isRunning) {
+    if (count >= 5) {
+      isRunning = false;
+    }
+    count++;
+    print('While is Running $count');
   }
 }
