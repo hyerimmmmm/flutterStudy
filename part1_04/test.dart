@@ -1,12 +1,21 @@
-// else if 문 예시
+// switch 문 예시
 void main() {
-  int standard = 3;
+  int num = 5;
 
-  if (standard < 0) {
-    print('standard는 0보다 작다');
-  } else if (standard == 3) {
-    print('standard는 3이다');
-  } else {
-    print('standard는 3이 아니다');
+  switch (num) {
+    case 1:
+      print('Switch $num');
+    case 2:
+      print('Switch $num');
+    case 3:
+      print('Switch $num');
+    case 4:
+      print('Switch $num');
+    case 5:
+      print('Switch $num');
+    case > 100:
+      print('Wow big number');
+    default:
+      print('No4 1~5');
   }
 }
