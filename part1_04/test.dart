@@ -1,14 +1,11 @@
-// do-while 문에서 continue 사용하기
+// try-catch 문 예시
 void main() {
-  int num = 0;
+  int num1 = 10;
 
-  do {
-    num++;
-
-    if (num == 4) {
-      continue;
-    }
-
-    print('Running Do While $num');
-  } while (num < 5);
+  try {
+    print(10 ~/ 0);
+  } catch(error, stack) {
+    print(error);
+    print(stack);
+  }
 }
