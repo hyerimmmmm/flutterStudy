@@ -1,10 +1,12 @@
-// if else 문 예시
+// else if 문 예시
 void main() {
-  bool trigger = 10 > 20;
+  int standard = 3;
 
-  if (trigger) {
-    print('True');
+  if (standard < 0) {
+    print('standard는 0보다 작다');
+  } else if (standard == 3) {
+    print('standard는 3이다');
   } else {
-    print('False');
+    print('standard는 3이 아니다');
   }
 }
