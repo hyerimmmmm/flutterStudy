@@ -1,11 +1,10 @@
-// while 문 예시
+// while 문에서 break 사용하기
 void main() {
-  bool isRunning = true;
   int count = 0;
 
-  while (isRunning) {
+  while (true) {
     if (count >= 5) {
-      isRunning = false;
+      break;
     }
     count++;
     print('While is Running $count');
