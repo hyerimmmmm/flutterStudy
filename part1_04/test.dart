@@ -7,5 +7,7 @@ void main() {
   } catch(error, stack) {
     print(error);
     print(stack);
+  } finally {
+    print('예외처리 문이 종료되었습니다');
   }
 }
