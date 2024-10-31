@@ -1,6 +1,8 @@
-// for 문 예시
+// for in 문 예시
 void main() {
-  for (int i = 0; i < 10; i++) {
-    print('Running For Index $i');
+  List<int> indexs = [0, 1, 2, 3, 4, 5];
+
+  for (final index in indexs) {
+    print('Running For Index $index');
   }
 }
