@@ -1,11 +1,16 @@
-// async await Future 예시
+// async* yield Stream 예시
 void main() {
-  Future<void> todo(int second) async {
-    await Future.delayed(Duration(seconds: second));
-    print('TODO Done in $second seconds');
+  Stream<int> todo() async* {
+    int counter = 0;
+
+    while(counter <= 5) {
+      counter++;
+      await Future.delayed(Duration(seconds: 1));
+      print('TODO is Running $counter');
+      yield counter;
+    }
+    print('TODO is Done');
   }
 
-  todo(3);
-  todo(1);
-  todo(5);
+  todo().listen((event) {});
 }
