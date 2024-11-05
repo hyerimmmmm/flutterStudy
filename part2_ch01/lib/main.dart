@@ -14,10 +14,13 @@ class TestWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Text(
-        'hello flutter',
-        style: TextStyle(
-          color: Colors.black,
+      child: Center(
+        child: Text(
+          'hello flutter',
+          style: TextStyle(
+            color: Colors.black,
+            fontSize: 40,
+          ),
         ),
       ),
     );
