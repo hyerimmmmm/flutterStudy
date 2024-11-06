@@ -3,28 +3,27 @@ import 'package:flutter/material.dart';
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
-
+      appBar: AppBar(
+        title: Text('study to container'),
+      ),
+      body: CustomContainer(),
     ),
   ));
 }
 
-class TestWidget extends StatelessWidget {
-  const TestWidget({super.key});
+class CustomContainer extends StatelessWidget {
+  const CustomContainer({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Center(
-        child: Text(
-          'hello flutter',
-          style: TextStyle(
-            color: Colors.black,
-            fontSize: 60,
-          ),
-        ),
-      ),
+    return Container(
+      width: double.infinity,
+      height: 100,
+      color: Color(0xFF9AFFC2),
+      padding: EdgeInsets.fromLTRB(10, 15, 20, 25),
+      margin: EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+      child: Center(child: Text('Hello Container Hello Container Hello Container Hello Container Hello Container Hello Container Hello Container')),
     );
   }
 }
-
 
