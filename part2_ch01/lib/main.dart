@@ -13,7 +13,13 @@ void main() {
         centerTitle: false,
         title: Text('This is App bar'),
       ),
-        body: TestWidget()
+        body: TestWidget(),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(Icons.bug_report),
+        onPressed: () {
+          print('Tab FAB');
+        },
+      ),
     ),
   ));
 }
