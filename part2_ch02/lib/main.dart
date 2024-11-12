@@ -19,59 +19,61 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      crossAxisAlignment: CrossAxisAlignment.end,
-      children: [
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        ),
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        ),
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        ),
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        ),
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        ),
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        ),
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        ),
-        Container(
-          color: Colors.red,
-          width: double.infinity,
-          height: 100,
-          margin: EdgeInsets.symmetric(vertical: 8),
-        )
-      ],
+    return SingleChildScrollView(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          ),
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          ),
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          ),
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          ),
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          ),
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          ),
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          ),
+          Container(
+            color: Colors.red,
+            width: double.infinity,
+            height: 100,
+            margin: EdgeInsets.symmetric(vertical: 8),
+          )
+        ],
+      ),
     );
   }
 }
