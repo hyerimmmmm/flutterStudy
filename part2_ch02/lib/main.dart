@@ -6,7 +6,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Widget을 상하좌우로 배치하기'),
+          title: Text('Widget을 스크롤하기'),
         ),
         body: Body(),
       ),
@@ -19,24 +19,59 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: double.infinity,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.center,
-        children: [
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.red,
-          ),
-          Container(
-            width: 100,
-            height: 100,
-            color: Colors.orange,
-          )
-        ],
-      ),
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      crossAxisAlignment: CrossAxisAlignment.end,
+      children: [
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        ),
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        ),
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        ),
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        ),
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        ),
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        ),
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        ),
+        Container(
+          color: Colors.red,
+          width: double.infinity,
+          height: 100,
+          margin: EdgeInsets.symmetric(vertical: 8),
+        )
+      ],
     );
   }
 }
