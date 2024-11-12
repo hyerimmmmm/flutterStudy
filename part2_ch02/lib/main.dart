@@ -20,8 +20,10 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      height: double.infinity,
       child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           Container(
             color: Colors.red,
