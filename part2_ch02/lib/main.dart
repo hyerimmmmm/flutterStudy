@@ -6,7 +6,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Widget을 상하로 배치하기'),
+          title: Text('Widget을 좌우로 배치하기'),
         ),
         body: Body(),
       ),
@@ -20,28 +20,26 @@ class Body extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Container(
             color: Colors.red,
             width: 100,
             height: 80,
-            child: Text('Containainer 1'),
+            child: Text('Container 1'),
           ),
           Container(
             color: Colors.orange,
             width: 100,
             height: 80,
-            child: Text('Containainer 2'),
+            child: Text('Container 2'),
           ),
           Container(
             color: Colors.yellow,
             width: 100,
             height: 80,
-            child: Text('Containainer 3'),
+            child: Text('Container 3'),
           ),
         ],
       ),
