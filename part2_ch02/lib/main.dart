@@ -6,7 +6,7 @@ void main() {
     MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: Text('Widget을 스크롤하기'),
+          title: Text('Widget을 비율로 배치하기'),
         ),
         body: Body(),
       ),
@@ -19,70 +19,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
-      scrollDirection: Axis.horizontal,
-      child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          ),
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          ),
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          ),
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          ),
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          ),
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          ),
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          ),
-          Container(
-            color: Colors.red,
-            width: 100,
-            height: 100,
-            margin: EdgeInsets.symmetric(horizontal
-: 8),
-          )
-        ],
-      ),
+    return Placeholder(
+
     );
   }
 }
