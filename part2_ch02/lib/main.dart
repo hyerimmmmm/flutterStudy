@@ -19,20 +19,20 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return Row(
       children: [
         Container(
-         width: double.infinity,
-         height: 200,
+         height: double.infinity,
+         width: 50,
          color: Colors.red,
         ),
         Flexible(child: Container(
           color: Colors.orange,
-          height: 100,
+          width: 20,
         )),
         Expanded(child: Container(
           color: Colors.yellow,
-          height: 100,
+          //width: 20,
         ))
       ],
     );
