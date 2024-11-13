@@ -34,7 +34,11 @@ class ExampleStateless extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Expanded(
+      child: Container(
+        color: Colors.red,
+      ),
+    );
   }
 }
 
@@ -47,9 +51,28 @@ class ExampleStateful extends StatefulWidget {
 }
 
 class _ExampleStatefulState extends State<ExampleStateful> {
+  int index = 0;
+  
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Expanded(
+      child: GestureDetector(
+        onTap: () {
+          if (index == 5) {
+            index = 0;
+            return;
+          }
+
+          index++;
+        },
+        child: Container(
+          color: Colors.orange,
+          child: Center(
+            child: Text('$index'),
+          ),
+        ),
+      ),
+    );
   }
 }
 
