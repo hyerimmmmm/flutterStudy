@@ -58,6 +58,9 @@ class _ExampleStatefulState extends State<ExampleStateful> {
     return Expanded(
       child: GestureDetector(
         onTap: () {
+          setState(() {
+
+          });
           if (index == 5) {
             index = 0;
             return;
@@ -66,7 +69,7 @@ class _ExampleStatefulState extends State<ExampleStateful> {
           index++;
         },
         child: Container(
-          color: Colors.orange,
+          color: Colors.orange.withOpacity(index / 5),
           child: Center(
             child: Text('$index'),
           ),
