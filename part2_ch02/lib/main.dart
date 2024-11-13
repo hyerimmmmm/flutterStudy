@@ -36,10 +36,14 @@ class Body extends StatelessWidget {
           height: 300,
           color: Colors.orange,
         ),
-        Container(
-          width: 200,
-          height: 200,
-          color: Colors.yellow,
+        Positioned(
+          bottom: 0,
+          right: 0,
+          child: Container(
+            width: 200,
+            height: 200,
+            color: Colors.yellow,
+          ),
         ),
       ],
     );
