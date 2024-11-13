@@ -22,11 +22,13 @@ class Body extends StatelessWidget {
     return Column(
       children: [
         Flexible(
+          flex: 1,
           child: Container(
             color: Colors.red
           ),
         ),
         Flexible(
+          flex: 2,
           child: Container(
             color: Colors.orange
           ),
