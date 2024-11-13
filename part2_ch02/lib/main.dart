@@ -19,46 +19,8 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        Container(
-          width: double.infinity,
-          color: Colors.red,
-          height: 100,
-          margin: const EdgeInsets.symmetric(vertical: 10),
-        ),
-        Expanded(
-          child: Container(
-            color: Colors.red,
-            width: double.infinity,
-            margin: const EdgeInsets.symmetric(vertical: 10),
-            child: SingleChildScrollView(
-              child: Column(
-                children: [
-                  Container(color: Colors.blue, width: 50, height: 50, margin: const EdgeInsets.symmetric(vertical: 10),),
-                  Container(color: Colors.blue, width: 50, height: 50, margin: const EdgeInsets.symmetric(vertical: 10),),
-                  Container(color: Colors.blue, width: 50, height: 50, margin: const EdgeInsets.symmetric(vertical: 10),),
-                  Container(color: Colors.blue, width: 50, height: 50, margin: const EdgeInsets.symmetric(vertical: 10),),
-                  Container(color: Colors.blue, width: 50, height: 50, margin: const EdgeInsets.symmetric(vertical: 10),),
-                  Container(color: Colors.blue, width: 50, height: 50, margin: const EdgeInsets.symmetric(vertical: 10),),
-                ],
-              ),
-            ),
-          )
-        ),
-        Container(
-          width: double.infinity,
-          color: Colors.red,
-          height: 100,
-          margin: const EdgeInsets.symmetric(vertical: 10),
-        ),
-        Container(
-          width: double.infinity,
-          color: Colors.red,
-          height: 100,
-          margin: const EdgeInsets.symmetric(vertical: 10),
-        ),
-      ],
+    return Placeholder(
+      
     );
   }
 }
