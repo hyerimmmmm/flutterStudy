@@ -17,7 +17,7 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
+    return Column(
       children: [
         TestCheckBox(),
       ],
@@ -43,6 +43,18 @@ class _TestCheckBoxState extends State<TestCheckBox> {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Row(
+      children: [
+        Checkbox(value: values[0], onChanged: (value) => changeValue(0, value: value)),
+        Checkbox(value: values[1], onChanged: (value) => changeValue(1, value: value)),
+        Checkbox(value: values[2], onChanged: (value) => changeValue(2, value: value)),
+      ],
+    );
+  }
+
+  void changeValue(int index, {bool? value = false}) {
+    setState(() {
+      values[index] = value!;
+    });
   }
 }
