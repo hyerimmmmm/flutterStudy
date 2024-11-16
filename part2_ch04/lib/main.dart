@@ -33,6 +33,14 @@ class TestCheckBox extends StatefulWidget {
 }
 
 class _TestCheckBoxState extends State<TestCheckBox> {
+  late List<bool> values;
+
+  @override
+  void initState() {
+    super.initState();
+    values = [false, false, false];
+  }
+
   @override
   Widget build(BuildContext context) {
     return const Placeholder();
