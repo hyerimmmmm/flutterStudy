@@ -17,6 +17,24 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    return const Column(
+      children: [
+        TestCheckBox(),
+      ],
+    );
+  }
+}
+
+class TestCheckBox extends StatefulWidget {
+  const TestCheckBox({super.key});
+
+  @override
+  State<TestCheckBox> createState() => _TestCheckBoxState();
+}
+
+class _TestCheckBoxState extends State<TestCheckBox> {
+  @override
+  Widget build(BuildContext context) {
     return const Placeholder();
   }
 }
