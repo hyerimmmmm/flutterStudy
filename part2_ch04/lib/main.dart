@@ -153,14 +153,17 @@ class TestSwitch extends StatefulWidget {
 }
 
 class _TestSwitchState extends State<TestSwitch> {
-
   bool value = false;
 
   @override
   Widget build(BuildContext context) {
-    return Switch(
-        value: value,
-        onChanged: (newValue) => setState(() => value = newValue)
-    );
+    return Column(children: [
+      Switch(
+          value: value,
+          onChanged: (newValue) => setState(() => value = newValue)),
+      CupertinoSwitch(
+          value: value,
+          onChanged: (newValue) => setState(() => value = newValue))
+    ]);
   }
 }
