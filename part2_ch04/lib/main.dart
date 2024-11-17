@@ -22,6 +22,7 @@ class Body extends StatelessWidget {
         TestCheckBox(),
         TestRadioButton(),
         TestSlider(),
+        TestSwitch(),
       ],
     );
   }
@@ -140,6 +141,26 @@ class _TestSliderState extends State<TestSlider> {
           activeColor: Colors.red,
         ),
       ],
+    );
+  }
+}
+
+class TestSwitch extends StatefulWidget {
+  const TestSwitch({super.key});
+
+  @override
+  State<TestSwitch> createState() => _TestSwitchState();
+}
+
+class _TestSwitchState extends State<TestSwitch> {
+
+  bool value = false;
+
+  @override
+  Widget build(BuildContext context) {
+    return Switch(
+        value: value,
+        onChanged: (newValue) => setState(() => value = newValue)
     );
   }
 }
