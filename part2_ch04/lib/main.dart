@@ -127,9 +127,19 @@ class _TestSliderState extends State<TestSlider> {
 
   @override
   Widget build(BuildContext context) {
-    return Slider(
-        value: value,
-        onChanged: (newValue) => setState(() => value = newValue)
+    return Column(
+      children: [
+        Text('$value'),
+        Slider(
+          value: value,
+          onChanged: (newValue) => setState(() => value = newValue),
+          divisions: 100,
+          max: 100,
+          min: 0,
+          label: value.round().toString(),
+          activeColor: Colors.red,
+        ),
+      ],
     );
   }
 }
