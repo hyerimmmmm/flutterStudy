@@ -5,9 +5,9 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: Text('flutter의 다양한 입력들'),
+        title: const Text('flutter의 다양한 입력들'),
       ),
-      body: Body(),
+      body: const Body(),
     ),
   ));
 }
@@ -17,9 +17,10 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
+    return const Column(
       children: [
         TestCheckBox(),
+        TestRadioButton(),
       ],
     );
   }
@@ -56,5 +57,19 @@ class _TestCheckBoxState extends State<TestCheckBox> {
     setState(() {
       values[index] = value!;
     });
+  }
+}
+
+class TestRadioButton extends StatefulWidget {
+  const TestRadioButton({super.key});
+
+  @override
+  State<TestRadioButton> createState() => _TestRadioButtonState();
+}
+
+class _TestRadioButtonState extends State<TestRadioButton> {
+  @override
+  Widget build(BuildContext context) {
+    return const Placeholder();
   }
 }
