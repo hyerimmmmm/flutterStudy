@@ -2,6 +2,9 @@ import 'package:english_words/english_words.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+const assetImagePath = 'assets/images';
+const bannerImage = '$assetImagePath/banner.png';
+
 void main() {
   runApp(MaterialApp(
     home: Scaffold(
@@ -18,7 +21,9 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Placeholder();
+    return Center(
+      child: Image.asset(bannerImage),
+    );
   }
 }
 
