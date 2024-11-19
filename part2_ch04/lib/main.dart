@@ -5,7 +5,7 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter의 Callback'),
+        title: const Text('Flutter의 다양한 입력들'),
       ),
       body: const Body(),
     ),
@@ -17,59 +17,45 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return TestWidget();
+    return const Column(
+      children: [
+        TestCheckBox(),
+      ],
+    );
   }
 }
 
-class TestWidget extends StatefulWidget {
-  const TestWidget({super.key});
+class TestCheckBox extends StatefulWidget {
+  const TestCheckBox({super.key});
 
   @override
-  State<TestWidget> createState() => _TestWidgetState();
+  State<TestCheckBox> createState() => _TestCheckBoxState();
 }
 
-class _TestWidgetState extends State<TestWidget> {
-  int value = 0;
+class _TestCheckBoxState extends State<TestCheckBox> {
+  late List<bool> values;
+
+  @override
+  void initState() {
+    super.initState();
+    values = [false, false, false];
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return Row(
       children: [
-        Text(
-          'Count: $value',
-          style: const TextStyle(fontSize: 30),
-        ),
-        TestButton(addCounter)
+        Checkbox(value: values[0], onChanged: (value) => changeValue(0, value ?? false)),
+        Checkbox(value: values[1], onChanged: (value) => changeValue(1, value ?? false)),
+        Checkbox(value: values[2], onChanged: (value) => changeValue(2, value ?? false)),
       ],
     );
   }
 
-  void addCounter() => setState(() => ++value);
-}
-
-class TestButton extends StatelessWidget {
-  const TestButton(this.callback, {super.key});
-  final VoidCallback callback;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-        margin: const EdgeInsets.symmetric(vertical: 8),
-        width: double.infinity,
-        child: InkWell(
-          onTap: () => callback.call(),
-          child: Center(
-              child: Container(
-                  padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
-                  decoration: BoxDecoration(border: Border.all()),
-                  child: const Text(
-                    'Up Counter',
-                    style: TextStyle(fontSize: 24),
-                  )
-              )
-          ),
-        )
-    );
+  void changeValue(int index, bool value) {
+    setState(() {
+      values[index] = value;
+    });
   }
 }
+
