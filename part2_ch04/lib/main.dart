@@ -19,37 +19,41 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        TestSwitch(),
+        TestPopupMenu(),
       ],
     );
   }
 }
 
-class TestSwitch extends StatefulWidget {
-  const TestSwitch({super.key});
+class TestPopupMenu extends StatefulWidget {
+  const TestPopupMenu({super.key});
 
   @override
-  State<TestSwitch> createState() => _TestSwitchState();
+  State<TestPopupMenu> createState() => _TestPopupMenuState();
 }
 
-class _TestSwitchState extends State<TestSwitch> {
-  bool value = false;
+enum TestPopupMenuValue {
+  testMenu1,
+  testMenu2,
+  testMenu3;
+}
+
+class _TestPopupMenuState extends State<TestPopupMenu> {
+  TestPopupMenuValue selectValue = TestPopupMenuValue.testMenu1;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Switch(
-          value: value,
-          onChanged: (newValue) => setState(
-            () => value = newValue,
-          ),
-        ),
-        CupertinoSwitch(
-          value: value,
-          onChanged: (newValue) => setState(
-            () => value = newValue,
-          ),
+        Text(selectValue.name, style: TextStyle(fontSize: 24),),
+        PopupMenuButton(
+          itemBuilder: (context) {
+            return TestPopupMenuValue.values
+                .map(
+                    (value) => PopupMenuItem(value: value, child: Text(value.name)))
+                .toList();
+          },
+          onSelected: (newValue) => setState(() => selectValue = newValue),
         ),
       ],
     );
