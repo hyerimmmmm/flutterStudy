@@ -50,17 +50,20 @@ class _TestRadioButtonState extends State<TestRadioButton> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          children: [
-            Radio<TestRadioValue>(
-              value: TestRadioValue.test1,
-              groupValue: selectValue,
-              onChanged: (value) => setState(
-                () => selectValue = value!,
-              ),
+        ListTile(
+          leading: Radio<TestRadioValue>(
+            value: TestRadioValue.test1,
+            groupValue: selectValue,
+            onChanged: (value) => setState(
+              () => selectValue = value!,
             ),
-            Text('test1', style: TextStyle(fontSize: 24),),
-          ],
+          ),
+          title: Text('test1', style: TextStyle(fontSize: 24),),
+          onTap: () => setState(() {
+            if (selectValue != TestRadioValue.test1) {
+              selectValue = TestRadioValue.test1;
+            }
+          }),
         ),
         Radio<TestRadioValue>(
           value: TestRadioValue.test2,
@@ -70,7 +73,7 @@ class _TestRadioButtonState extends State<TestRadioButton> {
           ),
         ),
         Radio<TestRadioValue>(
-          value: TestRadioValue.test2,
+          value: TestRadioValue.test3,
           groupValue: selectValue,
           onChanged: (value) => setState(
                 () => selectValue = value!,
