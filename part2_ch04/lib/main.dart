@@ -19,65 +19,37 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        TestRadioButton(),
+        TestSlider(),
       ],
     );
   }
 }
 
-class TestRadioButton extends StatefulWidget {
-  const TestRadioButton({super.key});
+class TestSlider extends StatefulWidget {
+  const TestSlider({super.key});
 
   @override
-  State<TestRadioButton> createState() => _TestRadioButtonState();
+  State<TestSlider> createState() => _TestSliderState();
 }
 
-enum TestRadioValue {
-  test1,
-  test2,
-  test3;
-}
-
-class _TestRadioButtonState extends State<TestRadioButton> {
-  TestRadioValue? selectValue;
-
-  @override
-  void initState() {
-    super.initState();
-  }
+class _TestSliderState extends State<TestSlider> {
+  double value = 0;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ListTile(
-          leading: Radio<TestRadioValue>(
-            value: TestRadioValue.test1,
-            groupValue: selectValue,
-            onChanged: (value) => setState(
-              () => selectValue = value!,
-            ),
+        Text('${value.round()}'),
+        Slider(
+          value: value,
+          onChanged: (newValue) => setState(
+            () => value = newValue,
           ),
-          title: Text('test1', style: TextStyle(fontSize: 24),),
-          onTap: () => setState(() {
-            if (selectValue != TestRadioValue.test1) {
-              selectValue = TestRadioValue.test1;
-            }
-          }),
-        ),
-        Radio<TestRadioValue>(
-          value: TestRadioValue.test2,
-          groupValue: selectValue,
-          onChanged: (value) => setState(
-                () => selectValue = value!,
-          ),
-        ),
-        Radio<TestRadioValue>(
-          value: TestRadioValue.test3,
-          groupValue: selectValue,
-          onChanged: (value) => setState(
-                () => selectValue = value!,
-          ),
+          divisions: 100,
+          max: 100,
+          min: 0,
+          label: value.round().toString(),
+          activeColor: Colors.blue,
         ),
       ],
     );
