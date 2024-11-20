@@ -19,43 +19,64 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        TestCheckBox(),
+        TestRadioButton(),
       ],
     );
   }
 }
 
-class TestCheckBox extends StatefulWidget {
-  const TestCheckBox({super.key});
+class TestRadioButton extends StatefulWidget {
+  const TestRadioButton({super.key});
 
   @override
-  State<TestCheckBox> createState() => _TestCheckBoxState();
+  State<TestRadioButton> createState() => _TestRadioButtonState();
 }
 
-class _TestCheckBoxState extends State<TestCheckBox> {
-  late List<bool> values;
+enum TestRadioValue {
+  test1,
+  test2,
+  test3;
+}
+
+class _TestRadioButtonState extends State<TestRadioButton> {
+  TestRadioValue? selectValue;
 
   @override
   void initState() {
     super.initState();
-    values = [false, false, false];
   }
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       children: [
-        Checkbox(value: values[0], onChanged: (value) => changeValue(0, value ?? false)),
-        Checkbox(value: values[1], onChanged: (value) => changeValue(1, value ?? false)),
-        Checkbox(value: values[2], onChanged: (value) => changeValue(2, value ?? false)),
+        Row(
+          children: [
+            Radio<TestRadioValue>(
+              value: TestRadioValue.test1,
+              groupValue: selectValue,
+              onChanged: (value) => setState(
+                () => selectValue = value!,
+              ),
+            ),
+            Text('test1', style: TextStyle(fontSize: 24),),
+          ],
+        ),
+        Radio<TestRadioValue>(
+          value: TestRadioValue.test2,
+          groupValue: selectValue,
+          onChanged: (value) => setState(
+                () => selectValue = value!,
+          ),
+        ),
+        Radio<TestRadioValue>(
+          value: TestRadioValue.test2,
+          groupValue: selectValue,
+          onChanged: (value) => setState(
+                () => selectValue = value!,
+          ),
+        ),
       ],
     );
   }
-
-  void changeValue(int index, bool value) {
-    setState(() {
-      values[index] = value;
-    });
-  }
 }
-
