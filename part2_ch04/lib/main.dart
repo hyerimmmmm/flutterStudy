@@ -5,7 +5,7 @@ void main() {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
-        title: const Text('Flutter의 다양한 입력들'),
+        title: const Text('Flutter의 Callback'),
       ),
       body: const Body(),
     ),
@@ -17,45 +17,55 @@ class Body extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        TestPopupMenu(),
-      ],
-    );
+    return TestWidget();
   }
 }
 
-class TestPopupMenu extends StatefulWidget {
-  const TestPopupMenu({super.key});
+class TestWidget extends StatefulWidget {
+  const TestWidget({super.key});
 
   @override
-  State<TestPopupMenu> createState() => _TestPopupMenuState();
+  State<TestWidget> createState() => _TestWidgetState();
 }
 
-enum TestPopupMenuValue {
-  testMenu1,
-  testMenu2,
-  testMenu3;
-}
-
-class _TestPopupMenuState extends State<TestPopupMenu> {
-  TestPopupMenuValue selectValue = TestPopupMenuValue.testMenu1;
+class _TestWidgetState extends State<TestWidget> {
+  int value = 0;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: [
-        Text(selectValue.name, style: TextStyle(fontSize: 24),),
-        PopupMenuButton(
-          itemBuilder: (context) {
-            return TestPopupMenuValue.values
-                .map(
-                    (value) => PopupMenuItem(value: value, child: Text(value.name)))
-                .toList();
-          },
-          onSelected: (newValue) => setState(() => selectValue = newValue),
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Text(
+            'count: $value',
+            style: TextStyle(fontSize: 30),
+          ),
+          TestButton(),
+        ]);
+  }
+}
+
+class TestButton extends StatelessWidget {
+  const TestButton({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: EdgeInsets.symmetric(vertical: 8),
+      width: double.infinity,
+      child: GestureDetector(
+        onTap: () => print('Tab'),
+        child: Center(
+          child: Container(
+            padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
+              decoration: BoxDecoration(border: Border.all()),
+              child: Text(
+                'up counter',
+                style: TextStyle(fontSize: 24),
+              )),
         ),
-      ],
+      ),
     );
   }
 }
