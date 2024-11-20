@@ -41,13 +41,19 @@ class _TestWidgetState extends State<TestWidget> {
             'count: $value',
             style: TextStyle(fontSize: 30),
           ),
-          TestButton(),
+          TestButton(addCounter),
         ]);
+  }
+
+  void addCounter() {
+    setState(() => ++value);
   }
 }
 
 class TestButton extends StatelessWidget {
-  const TestButton({super.key});
+  const TestButton(this.callback, {super.key});
+
+  final VoidCallback callback;
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +61,7 @@ class TestButton extends StatelessWidget {
       margin: EdgeInsets.symmetric(vertical: 8),
       width: double.infinity,
       child: GestureDetector(
-        onTap: () => print('Tab'),
+        onTap: () => callback.call(),
         child: Center(
           child: Container(
             padding: EdgeInsets.symmetric(vertical: 4, horizontal: 8),
