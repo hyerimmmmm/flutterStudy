@@ -19,37 +19,37 @@ class Body extends StatelessWidget {
   Widget build(BuildContext context) {
     return const Column(
       children: [
-        TestSlider(),
+        TestSwitch(),
       ],
     );
   }
 }
 
-class TestSlider extends StatefulWidget {
-  const TestSlider({super.key});
+class TestSwitch extends StatefulWidget {
+  const TestSwitch({super.key});
 
   @override
-  State<TestSlider> createState() => _TestSliderState();
+  State<TestSwitch> createState() => _TestSwitchState();
 }
 
-class _TestSliderState extends State<TestSlider> {
-  double value = 0;
+class _TestSwitchState extends State<TestSwitch> {
+  bool value = false;
 
   @override
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Text('${value.round()}'),
-        Slider(
+        Switch(
           value: value,
           onChanged: (newValue) => setState(
             () => value = newValue,
           ),
-          divisions: 100,
-          max: 100,
-          min: 0,
-          label: value.round().toString(),
-          activeColor: Colors.blue,
+        ),
+        CupertinoSwitch(
+          value: value,
+          onChanged: (newValue) => setState(
+            () => value = newValue,
+          ),
         ),
       ],
     );
