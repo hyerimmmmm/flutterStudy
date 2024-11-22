@@ -1,9 +1,21 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:part2_ch06/screen/new_page.dart';
 
 void main() {
-  runApp(MaterialApp(home: HomeWidget()));
+  runApp(
+    MaterialApp.router(
+      routerConfig: GoRouter(
+        initialLocation: '/',
+        routes: [
+          GoRoute(path: '/', name: 'Home', builder: (context, _) => HomeWidget()),
+          GoRoute(path: '/new1', name: 'New1', builder: (context, _) => NewPage()),
+          GoRoute(path: '/new2', name: 'New2', builder: (context, _) => NewPage2())
+        ],
+      ),
+    ),
+  );
 }
 
 class HomeWidget extends StatefulWidget {
@@ -30,14 +42,7 @@ class _HomeWidgetState extends State<HomeWidget> {
       ),
       body: Center(
         child: TextButton(
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(
-                builder: (context) => NewPage(),
-              ),
-            );
-          },
+          onPressed: () => context.pushNamed('New1'),
           child: Text('Go to Page'),
         ),
       ),
