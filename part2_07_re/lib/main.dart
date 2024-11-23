@@ -5,6 +5,18 @@ void main() {
   runApp(
     MaterialApp(
       home: HomeWidget(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.light(
+          primary: Colors.amber,
+          secondary: Colors.blue,
+          tertiary: Colors.green
+        ),
+        appBarTheme: AppBarTheme(
+          backgroundColor: Colors.blue,
+          foregroundColor: Colors.white,
+          centerTitle: true,
+        )
+      )
     ),
   );
 }
@@ -29,7 +41,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter theme'),
+        title: Text('Flutter theme')
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
@@ -37,7 +49,7 @@ class _HomeWidgetState extends State<HomeWidget> {
             () => count++,
           );
         },
-        backgroundColor: Colors.blue,
+        // backgroundColor: Colors.blue,
         child: Icon(Icons.add),
       ),
       body: HomeBody(),
