@@ -5,21 +5,19 @@ void main() {
   runApp(
     MaterialApp(
       home: HomeWidget(),
-      theme: ThemeData(
-        colorScheme: ColorScheme.light(
-          primary: Colors.amber,
-          secondary: Colors.blue,
-          tertiary: Colors.green
-        ),
-        appBarTheme: AppBarTheme(
-          backgroundColor: Colors.blue,
-          foregroundColor: Colors.white,
-          centerTitle: true,
-        )
-      )
+      theme: customTheme,
     ),
   );
 }
+
+final customTheme = ThemeData(
+    colorScheme: ColorScheme.dark(),
+    textTheme: TextTheme(
+        bodyLarge: TextStyle(fontWeight: FontWeight.bold, fontSize: 50),
+        bodyMedium: TextStyle(fontWeight: FontWeight.bold, fontSize: 40),
+        bodySmall: TextStyle(fontWeight: FontWeight.bold, fontSize: 30)
+    )
+);
 
 class HomeWidget extends StatefulWidget {
   const HomeWidget({super.key});
@@ -41,15 +39,15 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter theme')
+          title: Text('Flutter theme')
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           setState(
-            () => count++,
+                () => count++,
           );
         },
-        // backgroundColor: Colors.blue,
+// backgroundColor: Colors.blue,
         child: Icon(Icons.add),
       ),
       body: HomeBody(),
@@ -57,6 +55,8 @@ class _HomeWidgetState extends State<HomeWidget> {
   }
 
   Widget HomeBody() {
+    final textTheme = customTheme.textTheme;
+
     return Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -65,11 +65,19 @@ class _HomeWidgetState extends State<HomeWidget> {
             children: [
               Text(
                 'Press Count',
-                style: TextStyle(fontSize: 24),
+                style: textTheme.bodyLarge,
+              ),
+              Text(
+                'Press Count',
+                style: textTheme.bodyMedium,
+              ),
+              Text(
+                'Press Count',
+                style: textTheme.bodySmall,
               ),
               Text(
                 '$count',
-                style: TextStyle(fontSize: 24),
+// style: TextStyle(fontSize: 24),
               )
             ],
           )
