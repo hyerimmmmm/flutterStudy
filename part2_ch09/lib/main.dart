@@ -21,7 +21,7 @@ class _HomeWidgetState extends State<HomeWidget> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Flutter로 가위바위보 앱 만들기'),
+        title: Text('Flutter로 가위바위보앱 만들기'),
       ),
     );
   }
