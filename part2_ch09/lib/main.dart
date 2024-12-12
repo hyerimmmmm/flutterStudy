@@ -22,6 +22,7 @@ class _HomeWidgetState extends State<HomeWidget> {
     return Scaffold(
       appBar: AppBar(
         title: Text('Flutter로 가위바위보 앱 만들기'),
+        
       ),
     );
   }
